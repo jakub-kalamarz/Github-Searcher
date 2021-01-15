@@ -11,6 +11,8 @@
 		3B38C6A825AFB31300288E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38C6A725AFB31300288E75 /* SceneDelegate.swift */; };
 		3B38C6AF25AFB31600288E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B38C6AE25AFB31600288E75 /* Assets.xcassets */; };
 		3B38C6B225AFB31600288E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B38C6B025AFB31600288E75 /* LaunchScreen.storyboard */; };
+		3B5719C725B23B2B00708CE5 /* RepositoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5719C625B23B2B00708CE5 /* RepositoryCollectionViewCell.swift */; };
+		3B5719CB25B23E7300708CE5 /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5719CA25B23E7300708CE5 /* SectionHeaderReusableView.swift */; };
 		3B6D2B2325B0DA7A002F68D5 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D2B2225B0DA7A002F68D5 /* Author.swift */; };
 		3B6D2B2625B0DA8D002F68D5 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D2B2525B0DA8D002F68D5 /* Commit.swift */; };
 		3B6D2B2925B0DB37002F68D5 /* RepositoryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D2B2825B0DB37002F68D5 /* RepositoryDetailCoordinator.swift */; };
@@ -32,6 +34,8 @@
 		3B38C6AE25AFB31600288E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B38C6B125AFB31600288E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B38C6B325AFB31600288E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B5719C625B23B2B00708CE5 /* RepositoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3B5719CA25B23E7300708CE5 /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
 		3B6D2B2225B0DA7A002F68D5 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		3B6D2B2525B0DA8D002F68D5 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		3B6D2B2825B0DB37002F68D5 /* RepositoryDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCoordinator.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 			path = "Github-Searcher";
 			sourceTree = "<group>";
 		};
+		3B5719C925B23E6500708CE5 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				3B5719CA25B23E7300708CE5 /* SectionHeaderReusableView.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		3BF2027125B0D028009A6E76 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		3BFA85CD25AFB5C700705058 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3B5719C925B23E6500708CE5 /* Reusable */,
 				3BFA85CF25AFB65600705058 /* RepositoryDetail */,
 				3BFA85CE25AFB64400705058 /* RepositoryList */,
 			);
@@ -131,6 +144,7 @@
 				3BF2029725B0D863009A6E76 /* RepositoryListCoordinator.swift */,
 				3BF2029525B0D863009A6E76 /* RepositoryListView.swift */,
 				3BF2029625B0D863009A6E76 /* RepositoryListViewModel.swift */,
+				3B5719C625B23B2B00708CE5 /* RepositoryCollectionViewCell.swift */,
 			);
 			path = RepositoryList;
 			sourceTree = "<group>";
@@ -296,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6D2B2625B0DA8D002F68D5 /* Commit.swift in Sources */,
+				3B5719CB25B23E7300708CE5 /* SectionHeaderReusableView.swift in Sources */,
 				3BF2029925B0D863009A6E76 /* RepositoryListViewModel.swift in Sources */,
 				3BF2026F25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift in Sources */,
 				3BF2029A25B0D863009A6E76 /* RepositoryListCoordinator.swift in Sources */,
@@ -305,6 +320,7 @@
 				3BF2026C25B0BC28009A6E76 /* RepositoryDetailView.swift in Sources */,
 				3BF2027325B0D035009A6E76 /* BaseCoordinator.swift in Sources */,
 				3B6D2B2325B0DA7A002F68D5 /* Author.swift in Sources */,
+				3B5719C725B23B2B00708CE5 /* RepositoryCollectionViewCell.swift in Sources */,
 				3BF2029825B0D863009A6E76 /* RepositoryListView.swift in Sources */,
 				3B38C6A825AFB31300288E75 /* SceneDelegate.swift in Sources */,
 				3BF2027B25B0D46F009A6E76 /* Repository.swift in Sources */,
