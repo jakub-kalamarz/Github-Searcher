@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import UIKit
 import RxSwift
+import UIKit
 
 enum RepositoryDetailCoordinationResult {
     case back
@@ -15,12 +15,11 @@ enum RepositoryDetailCoordinationResult {
 }
 
 class RepositoryDetailCoordinator: BaseCoordinator<RepositoryDetailCoordinationResult> {
-
     private let navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    //TODO: Start && Open Web method
+    // TODO: Start && Open Web method
 }

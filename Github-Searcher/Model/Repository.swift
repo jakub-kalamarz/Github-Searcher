@@ -8,17 +8,16 @@
 import Foundation
 
 struct Repository: Hashable {
-
     let id: Int
-    let name:String
-    let stars:Int
+    let name: String
+    let stars: Int
 
     init?(from data: [String: Any]) {
         guard
             let name = data["full_name"] as? String,
             let id = data["id"] as? Int,
             let stars = data["stargazers_count"] as? Int
-            //let author = data["owner"] as? [String: Any]
+        // let author = data["owner"] as? [String: Any]
         else { return nil }
 
         self.init(name: name, id: id, stars: stars)
@@ -28,9 +27,8 @@ struct Repository: Hashable {
         self.id = id
         self.name = name
         self.stars = stars
-        //self.author = Author.init()
+        // self.author = Author.init()
     }
 
-    static func == (lhs: Repository, rhs: Repository) -> Bool { lhs.id == lhs.id }
-
+    static func == (lhs: Repository, _: Repository) -> Bool { lhs.id == lhs.id }
 }
