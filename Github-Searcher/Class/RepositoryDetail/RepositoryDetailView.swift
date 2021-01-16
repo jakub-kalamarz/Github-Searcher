@@ -8,9 +8,15 @@
 import UIKit
 
 class RepositoryDetailView: UIViewController {
+    var viewModel: RepositoryDetailViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+}
+
+extension RepositoryDetailView {
+    private func setupUI() {}
 }

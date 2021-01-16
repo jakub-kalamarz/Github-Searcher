@@ -11,7 +11,6 @@ import UIKit
 
 enum RepositoryDetailCoordinationResult {
     case back
-    case open(String)
 }
 
 class RepositoryDetailCoordinator: BaseCoordinator<RepositoryDetailCoordinationResult> {
@@ -21,5 +20,13 @@ class RepositoryDetailCoordinator: BaseCoordinator<RepositoryDetailCoordinationR
         self.navigationController = navigationController
     }
 
-    // TODO: Start && Open Web method
+    override func start() -> Observable<RepositoryDetailCoordinationResult> {
+        let view = RepositoryDetailView()
+        let viewModel = RepositoryDetailViewModel()
+        view.viewModel = viewModel
+
+        navigationController.pushViewController(view, animated: true)
+
+        return Observable.never()
+    }
 }
