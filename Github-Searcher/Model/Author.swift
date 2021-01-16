@@ -7,4 +7,12 @@
 
 import Foundation
 
-struct Author {}
+struct Author: Hashable {
+    let name: String
+    let photo: String
+
+    init(name: String, photo: String) {
+        self.name = name
+        self.photo = photo
+    }
+}
