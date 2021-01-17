@@ -10,14 +10,15 @@ import RxSwift
 
 class RepositoryDetailViewModel {
 
-    let commits = PublishSubject<[Commit]>()
+    let commits: Observable<[Commit]>
 
     init(networkService: GithubService = GithubService()) {
-        
-    }
 
-    func fetchCommits() {
-        let commitsArray = Array(repeating: Commit(), count: 3)
-        self.commits.on(.next(commitsArray))
+        self.commits = networkService.fetchCommits(for: "KlubJagiellonski/pola-ios", count: 3)
+
+        self.commits.subscribe(onNext: { item in
+            print(item)
+        })
+        .disposed(by: DisposeBag())
     }
 }

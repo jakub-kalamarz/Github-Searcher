@@ -36,4 +36,18 @@ class GithubService {
                 return Observable.just(repositories)
             }
     }
+
+    func fetchCommits(for repository: String, count: Int) -> Observable<[Commit]> {
+        let url = URL(string: "https://api.github.com/repos/\(repository)/commits?per_page=\(count)")!
+        return session.rx
+            .json(url: url)
+            .flatMap { json throws -> Observable<[Commit]> in
+                guard
+                    let json = json as? [[String: Any]]
+                else { return Observable.error(ServiceError.cannotParse) }
+                let commits = json.compactMap(Commit.init)
+                return Observable.just(commits)
+            }
+
+    }
 }

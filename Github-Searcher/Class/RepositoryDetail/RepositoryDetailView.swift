@@ -102,9 +102,6 @@ extension RepositoryDetailView: UITableViewDelegate {
             cell.viewModel = RepositoryCommitViewModel(from: item, position: row)
         }
         .disposed(by: disposeBag)
-
-        viewModel.fetchCommits()
-
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

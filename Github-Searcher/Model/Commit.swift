@@ -8,7 +8,27 @@
 import Foundation
 
 struct Commit {
-    let author:String = "Author"
-    let authorAddress:String = "example@example.com"
-    let commitMessage: String = "Just a normal commit message"
+    let author:String
+    let authorAddress:String
+    let commitMessage: String
+
+    init?(from data: [String: Any]) {
+        guard
+            let commit = data["commit"] as? [String: Any]
+        else { return nil }
+
+        let author = commit["author"] as! [String: Any]
+        let name = author["name"] as! String
+        let email = author["email"] as! String
+        let message = commit["message"] as! String
+
+        self.init(author: name, authorAddress: email, commitMessage: message)
+
+    }
+
+    init(author: String, authorAddress: String, commitMessage: String) {
+        self.author = author
+        self.authorAddress = authorAddress
+        self.commitMessage = commitMessage
+    }
 }
