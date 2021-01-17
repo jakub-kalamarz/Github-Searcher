@@ -7,4 +7,8 @@
 
 import Foundation
 
-struct Commit {}
+struct Commit {
+    let author:String = "Author"
+    let authorAddress:String = "example@example.com"
+    let commitMessage: String = "Just a normal commit message"
+}

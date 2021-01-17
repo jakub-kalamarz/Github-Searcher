@@ -18,6 +18,8 @@
 		3B6D2B2925B0DB37002F68D5 /* RepositoryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D2B2825B0DB37002F68D5 /* RepositoryDetailCoordinator.swift */; };
 		3B6E034825B2E48E003D82BB /* RepositoryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E034725B2E48E003D82BB /* RepositoryCollectionViewCellViewModel.swift */; };
 		3B6E034B25B2E70B003D82BB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E034A25B2E70B003D82BB /* Theme.swift */; };
+		3BCA18B625B44E9600A7BE68 /* RepositoryCommitsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA18B525B44E9600A7BE68 /* RepositoryCommitsTableViewCell.swift */; };
+		3BCA18B925B4583300A7BE68 /* RepositoryCommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA18B825B4583300A7BE68 /* RepositoryCommitViewModel.swift */; };
 		3BCC738F25B2F2DA00ACD2B0 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCC738E25B2F2DA00ACD2B0 /* GithubService.swift */; };
 		3BF2026C25B0BC28009A6E76 /* RepositoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2026B25B0BC28009A6E76 /* RepositoryDetailView.swift */; };
 		3BF2026F25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2026E25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift */; };
@@ -44,6 +46,8 @@
 		3B6D2B2825B0DB37002F68D5 /* RepositoryDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCoordinator.swift; sourceTree = "<group>"; };
 		3B6E034725B2E48E003D82BB /* RepositoryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		3B6E034A25B2E70B003D82BB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3BCA18B525B44E9600A7BE68 /* RepositoryCommitsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCommitsTableViewCell.swift; sourceTree = "<group>"; };
+		3BCA18B825B4583300A7BE68 /* RepositoryCommitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCommitViewModel.swift; sourceTree = "<group>"; };
 		3BCC738E25B2F2DA00ACD2B0 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		3BF2026B25B0BC28009A6E76 /* RepositoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailView.swift; sourceTree = "<group>"; };
 		3BF2026E25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				3BF2026B25B0BC28009A6E76 /* RepositoryDetailView.swift */,
 				3B6D2B2825B0DB37002F68D5 /* RepositoryDetailCoordinator.swift */,
 				3BF2026E25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift */,
+				3BCA18B525B44E9600A7BE68 /* RepositoryCommitsTableViewCell.swift */,
+				3BCA18B825B4583300A7BE68 /* RepositoryCommitViewModel.swift */,
 			);
 			path = RepositoryDetail;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				3BF2026F25B0BC2F009A6E76 /* RepositoryDetailViewModel.swift in Sources */,
 				3BF2029A25B0D863009A6E76 /* RepositoryListCoordinator.swift in Sources */,
 				3BF2027E25B0D635009A6E76 /* AppCoordinator.swift in Sources */,
+				3BCA18B625B44E9600A7BE68 /* RepositoryCommitsTableViewCell.swift in Sources */,
 				3B6D2B2925B0DB37002F68D5 /* RepositoryDetailCoordinator.swift in Sources */,
 				3B38C6A625AFB31300288E75 /* AppDelegate.swift in Sources */,
 				3BF2026C25B0BC28009A6E76 /* RepositoryDetailView.swift in Sources */,
@@ -336,6 +343,7 @@
 				3B38C6A825AFB31300288E75 /* SceneDelegate.swift in Sources */,
 				3BF2027B25B0D46F009A6E76 /* Repository.swift in Sources */,
 				3B6E034B25B2E70B003D82BB /* Theme.swift in Sources */,
+				3BCA18B925B4583300A7BE68 /* RepositoryCommitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

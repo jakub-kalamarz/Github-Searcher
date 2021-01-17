@@ -6,5 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
-class RepositoryDetailViewModel {}
+class RepositoryDetailViewModel {
+
+    let commits = PublishSubject<[Commit]>()
+
+    init(networkService: GithubService = GithubService()) {
+        
+    }
+
+    func fetchCommits() {
+        let commitsArray = Array(repeating: Commit(), count: 3)
+        self.commits.on(.next(commitsArray))
+    }
+}
