@@ -12,13 +12,8 @@ class RepositoryDetailViewModel {
 
     let commits: Observable<[Commit]>
 
-    init(networkService: GithubService = GithubService()) {
+    init(for query: String, networkService: GithubService = GithubService()) {
 
-        self.commits = networkService.fetchCommits(for: "KlubJagiellonski/pola-ios", count: 3)
-
-        self.commits.subscribe(onNext: { item in
-            print(item)
-        })
-        .disposed(by: DisposeBag())
+        self.commits = networkService.fetchCommits(for: query, count: 3)
     }
 }
