@@ -47,6 +47,7 @@ class RepositoryCommitsTableViewCell: UITableViewCell {
     let messageLabel: UILabel = {
         let label = UILabel()
         label.text = "This is a short commit message."
+        label.numberOfLines = 0
         label.textColor = Theme.warmGrey
         return label
     }()
@@ -79,6 +80,10 @@ extension RepositoryCommitsTableViewCell {
         viewModel.message
             .bind(to: messageLabel.rx.text)
             .disposed(by: disposeBag)
+
+        viewModel.position
+            .bind(to: numberLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -93,7 +98,8 @@ extension RepositoryCommitsTableViewCell {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 76),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
 
         contentView.addSubview(numberLabel)
