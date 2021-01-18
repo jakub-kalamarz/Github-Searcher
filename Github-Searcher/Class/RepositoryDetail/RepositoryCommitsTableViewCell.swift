@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepositoryCommitsTableViewCell: UITableViewCell {
-    var viewModel: RepositoryCommitViewModel!
+    var viewModel: RepositoryCommitViewModel! {
+        didSet {
+            setupBindings()
+        }
+    }
+    let disposeBag = DisposeBag()
 
     let numberLabel: UILabel = {
         let label = UILabel()
@@ -56,6 +63,22 @@ class RepositoryCommitsTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension RepositoryCommitsTableViewCell {
+    private func setupBindings() {
+        viewModel.author
+            .bind(to: authorLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.email
+            .bind(to: emailLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.message
+            .bind(to: messageLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
