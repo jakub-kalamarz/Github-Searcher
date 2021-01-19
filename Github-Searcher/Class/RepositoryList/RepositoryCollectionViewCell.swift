@@ -68,6 +68,26 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     }
 }
 
+//MARK:- Rx Bindings
+extension RepositoryCollectionViewCell {
+    private func bindings() {
+        viewModel.name
+            .bind(to: titleLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.stars
+            .map { String($0) }
+            .bind(to: starsLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.photoURL
+            .map { UIImage(data: try! Data(contentsOf: URL(string: $0)!)) }
+            .bind(to: authorPhoto.rx.image)
+            .disposed(by: disposeBag)
+    }
+}
+
+//MARK:- Setup UI
 extension RepositoryCollectionViewCell {
     private func configure() {
         layer.cornerRadius = 13
@@ -110,21 +130,5 @@ extension RepositoryCollectionViewCell {
             starsLabel.leadingAnchor.constraint(equalTo: starsIcon.trailingAnchor, constant: 4),
             starsLabel.centerYAnchor.constraint(equalTo: starsIcon.centerYAnchor),
         ])
-    }
-
-    private func bindings() {
-        viewModel.name
-            .bind(to: titleLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        viewModel.stars
-            .map { String($0) }
-            .bind(to: starsLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        viewModel.photoURL
-            .map { UIImage(data: try! Data(contentsOf: URL(string: $0)!)) }
-            .bind(to: authorPhoto.rx.image)
-            .disposed(by: disposeBag)
     }
 }
