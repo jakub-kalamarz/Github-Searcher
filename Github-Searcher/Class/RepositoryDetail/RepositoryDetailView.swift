@@ -16,7 +16,8 @@ class RepositoryDetailView: UIViewController {
     let authorPhoto: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
@@ -87,13 +88,52 @@ class RepositoryDetailView: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-
         setupTable()
+        setupBindings()
     }
 }
 
 //MARK: - Setup Bindings
 extension RepositoryDetailView: UITableViewDelegate {
+    private func setupBindings() {
+
+        viewModel.repository
+            .map { $0.author.name }
+            .bind(to: repoAuthorName.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.repository
+            .map { $0.author.photo }
+            .map { UIImage(data: try! Data(contentsOf: URL(string: $0)!)) }
+            .bind(to: authorPhoto.rx.image)
+            .disposed(by: disposeBag)
+
+        viewModel.repository
+            .map { $0.stars }
+            .map { "Number of Stars (\($0))" }
+            .bind(to: starsLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.repository
+            .map { $0.name }
+            .bind(to: repoTitle.rx.text)
+            .disposed(by: disposeBag)
+
+        viewOnline.rx.tap
+            .bind(to: viewModel.openWeb)
+            .disposed(by: disposeBag)
+
+        navigationItem.backBarButtonItem?.rx.tap
+            .bind(to: viewModel.back)
+            .disposed(by: disposeBag)
+
+        shareRepo.rx.tap
+            .subscribe(onNext: {
+                self.viewModel.shareButton(self)
+            })
+            .disposed(by: disposeBag)
+    }
+
     private func setupTable() {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(RepositoryCommitsTableViewCell.self, forCellReuseIdentifier: "cell")
